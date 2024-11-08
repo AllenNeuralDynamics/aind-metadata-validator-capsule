@@ -1,0 +1,48 @@
+{
+	"version": 1,
+	"base_image": "codeocean/py-julia-r:python3.10.12-R4.2.3-julia1.7.0-ubuntu22.04",
+	"args": [
+		"AWS_ACCESS_KEY_ID",
+		"AWS_DEFAULT_REGION",
+		"AWS_SECRET_ACCESS_KEY"
+	],
+	"options": {
+		"registry_host_arg": true,
+		"git_ask_pass": true
+	},
+	"installers": {
+		"apt": {
+			"packages": [
+				{
+					"name": "postgresql",
+					"version": "14+238"
+				}
+			],
+			"install_software_properties_common": true
+		},
+		"pip": {
+			"packages": [
+				{
+					"name": "aind-metadata-validator",
+					"version": "0.6.4"
+				}
+			],
+			"options": {},
+			"pre_install_options": {}
+		}
+	},
+	"env_variables": [
+		{
+			"name": "API_GATEWAY_HOST",
+			"value": "api.allenneuraldynamics-test.org"
+		},
+		{
+			"name": "DATABASE",
+			"value": "metadata_index"
+		},
+		{
+			"name": "COLLECTION",
+			"value": "data_assets"
+		}
+	]
+}
