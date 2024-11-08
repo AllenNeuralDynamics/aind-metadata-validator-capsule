@@ -1,3 +1,5 @@
-# aind-capsule-template
+# aind-metadata-validator-capsule
 
-Basic structure of a capsule to be customized as needed.
+Imports aind-metadata-validator and runs the sync.py file
+
+Requires the API_GATEWAY_HOST pointing to DocDB to determine which database to push to (dev or prod)
